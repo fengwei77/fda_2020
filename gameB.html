@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/reset.css" rel="stylesheet" media="screen"/>
+    <link rel="stylesheet" href="css/jpreloader.css">
+    <link href="css/style.css" rel="stylesheet" media="screen"/>
+    <link href="css/game2.css" rel="stylesheet" media="screen"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/jpreloader.min.js"></script>
+    <script type="text/javascript" src="js/eventact.js"></script>
+    <script type="text/javascript" src="node_modules/gsap/dist/gsap.min.js"></script>
+    <script type="text/javascript" src="node_modules/gsap/dist/Draggable.min.js"></script>
+
+    <title>粧愛水星球-化粧品安全選用 網路有獎徵答活動</title>
+</head>
+<body>
+
+<div id="wrap" class="gameBbg">
+    <div class="container">
+        <a href=""><img src="images/logo.png" alt=""/></a>
+        <div class="nav">
+            <ul>
+                <li><a href="javascript: void(0)" class="m1 act"></a></li>
+                <li><a href="rule.html" class="m2"></a></li>
+                <li><a href="javascript: void(0)" class="m3" onclick="awardpop()"></a></li>
+                <li><a href="https://www.facebook.com/tfdacos/" target="_blank" class="m4"></a></li>
+            </ul>
+        </div>
+        <div class="gameB">
+            <div class="niu">
+                <div class="niuup">
+                    <img src="images/gameb/niu-top.png" alt=""/>
+                </div>
+                <div class="niudown">
+                    <img src="images/gameb/niu-bottom.png" alt=""/>
+                </div>
+            </div>
+            <img src="images/gameb/gameb-ken.gif" alt="" class="ken"/>
+            <img src="images/gameb/patty.gif" alt="" class="patty"/>
+            <div class="hanboy">
+                <div class="hanboyup">
+                    <img src="images/gameb/hanboy-top.png" alt=""/>
+                </div>
+                <div class="hanboydown">
+                    <img src="images/gameb/hanboy-bottom.png" alt=""/>
+                </div>
+            </div>
+            <div class="cashierwrap">
+                <img src="images/gameb/cashier.png" alt="">
+                <img src="images/gameb/cashier.png" alt=""/>
+                <img src="images/gameb/cashier.png" alt=""/>
+                <img src="images/gameb/cashier.png" alt=""/>
+            </div>
+            <div class="track">
+            <img src="images/gameb/cat.png" alt="" id="player" class="cat">
+            </div>
+            <!--第一題對話框-->
+            <div class="q1wrap" style="display:none">
+                <img src="images/gameb/q1a1.png" alt="" class="q1a1">
+                <img src="images/gameb/q1a2.png" alt="" class="q1a2">
+                <img src="images/gameb/q1a3.png" alt="" class="q1a3">
+                <img src="images/gameb/q1a4.png" alt="" class="q1a4">
+            </div>
+            <!--第二題對話框-->
+            <div class="q2wrap" style="display:none">
+                <img src="images/gameb/q2a1.png" alt="" class="q2a1">
+                <img src="images/gameb/q2a2.png" alt="" class="q2a2">
+                <img src="images/gameb/q2a3.png" alt="" class="q2a3">
+                <img src="images/gameb/q2a4.png" alt="" class="q2a4">
+            </div>
+            <!--第三題對話框-->
+            <div class="q3wrap" style="display:none">
+                <img src="images/gameb/q3a1.png" alt="" class="q3a1">
+                <img src="images/gameb/q3a2.png" alt="" class="q3a2">
+                <img src="images/gameb/q3a3.png" alt="" class="q3a3">
+                <img src="images/gameb/q3a4.png" alt="" class="q3a4">
+            </div>
+            <!--第四題對話框-->
+            <div class="q4wrap" style="display:none">
+                <img src="images/gameb/q4a1.png" alt="" class="q4a1">
+                <img src="images/gameb/q4a2.png" alt="" class="q4a2">
+                <img src="images/gameb/q4a3.png" alt="" class="q4a3">
+                <img src="images/gameb/q4a4.png" alt="" class="q4a4">
+            </div>
+            <!--第五題對話框-->
+            <div class="q5wrap" style="display:none">
+                <img src="images/gameb/q5a1.png" alt="" class="q5a1">
+                <img src="images/gameb/q5a2.png" alt="" class="q5a2">
+                <img src="images/gameb/q5a3.png" alt="" class="q5a3">
+                <img src="images/gameb/q5a4.png" alt="" class="q5a4">
+            </div>
+            <!--第六題對話框-->
+            <div class="q6wrap">
+                <img src="images/gameb/q6a1.png" alt="" class="q6a1">
+                <img src="images/gameb/q6a2.png" alt="" class="q6a2">
+                <img src="images/gameb/q6a3.png" alt="" class="q6a3">
+                <img src="images/gameb/q6a4.png" alt="" class="q6a4">
+            </div>
+            <!--答錯msg-->
+            <img src="images/gameb/wrong.png" alt="" class="wrong"/>
+            <!--答對msg-->
+            <img src="images/gameb/corrent.png" alt="" class="corrent"/>
+            <!--第六題答對-->
+            <div class="allcorrent">
+                <img src="images/gameb/allcorrent.png" alt=""/>
+                <a href="" class="goawardbtn"></a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="js/game2.js"></script>
+</body>
+</html>

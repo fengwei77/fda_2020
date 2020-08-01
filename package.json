@@ -1,0 +1,7 @@
+{
+  "name": "tdf_2020",
+  "version": "1.0.0",
+  "dependencies": {
+    "gsap": "^3.4.2"
+  }
+}

@@ -1,0 +1,20 @@
+.gameBbg{
+    overflow: hidden;
+}
+#wrap {
+    height: auto;
+}
+.track {
+    width: 85%;
+    height: 60px;
+    background: white;
+    position: absolute;
+    top: 500px;
+    left: 5%;
+}
+
+.gameB .cat {
+    position: relative;
+    top: 0px;
+    z-index: 20;
+}

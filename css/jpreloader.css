@@ -1,0 +1,31 @@
+body{
+	display:none;
+}
+#jpreOverlay {
+	background:url(../images/loadingbg.jpg);
+}
+#jpreSlide{
+}
+
+#jpreLoader{
+	background:url(../images/loading.gif) center top no-repeat;
+	width:100px;
+	height:10px;
+/*	transform:rotate(157deg);
+	-webkit-transform: rotate(157deg);
+	-moz-transform: rotate(157deg);
+	-o-transform: rotate(157deg);
+	-ms-transform:rotate(157deg)*/
+}
+#jpreBar {
+	background:#ffffff;
+	-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
+}
+#jprePercentage {
+	color:#ffffff;
+	font-family:"Calibri";
+	font-weight:bold;
+	text-align:center;
+	font-size:16px;
+	line-height:30px;
+}
