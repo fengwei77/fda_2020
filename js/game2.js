@@ -7,7 +7,7 @@ const jars = [
     '.jar3',
     '.jar4'
 ];
-
+const ans_check_arr = [[4],[4],[1],[3],[1,2],[1,3]];
 //瓶子動作
 const t = gsap.timeline();
 let game_level = 0;
@@ -16,19 +16,19 @@ let answer_check = '';
 let answer = [];
 
 t.pause();
-var interval = setInterval(function () {
-    game_level++;
-    change_no++;
-    answer_check = '';
-    t.restart();
-    if (game_level === 5) {
-        clearInterval(interval);
-    }
-//do whatever here..
-}, 6000);
+// var interval = setInterval(function () {
+//     game_level++;
+//     change_no++;
+//     answer_check = '';
+//     t.restart();
+//     if (game_level === 5) {
+//         clearInterval(interval);
+//     }
+// //do whatever here..
+// }, 6000);
 setTimeout(function () {
     t.play();
-}, 2000);
+}, 500);
 // setTimeout(function () {
 //     game_level++;
 //     change_no++;
@@ -103,13 +103,14 @@ function checkHit(target) {
             answer_check = target.slice(-1);
             $(target).css('opacity',0);
             answer.push(target.slice(-1))
-            console.log(answer);
+            check_answer(target.slice(-1));
+            // console.log(answer);
         }
     }
-    if (game_level === 5) {
-        clearInterval(interval);
-        $('.q6wrap').hide();
-    }
+    // if (game_level === 5) {
+    //     // clearInterval(interval);
+    //     $('.q6wrap').hide();
+    // }
 }
 
 
@@ -125,10 +126,95 @@ function next_scene() {
     } else {
         $('.jar_box').css('padding-right', '70px');
     }
-    $('.q' + (change_no-1) + 'wrap').hide();
-    $('.q' + change_no + 'wrap').show();
     for (let i = 0; i < 4; i++) {
         $(jars[i]).attr('src', 'images/gameb/q' + change_no + 'p.png');
         // t.to(jars[i], {  y: 0 ,opacity:1} );
+    }
+}
+
+
+const wrong_mag_t = gsap.timeline();
+const success_mag_t = gsap.timeline();
+
+wrong_mag_t.pause();
+success_mag_t.pause();
+wrong_mag_t.to('#wrong_msg', {
+    keyframes: [
+        {
+            duration: 0.5,
+            opacity: 1
+        },
+        {
+            duration: 2,
+            opacity: 1
+        },
+        {
+            duration: 1,
+            opacity: 0
+        }
+    ],
+    onStart:function(){
+        console.log(change_no);
+        $('.q' + (change_no) + 'wrap').hide(800, function() {
+
+        });
+    },
+    onComplete:function(){
+        $('.q' + (change_no+1) + 'wrap').show(800, function() {
+            game_level++;
+            change_no++;
+            answer_check = '';
+            t.restart();
+            if (game_level === 5) {
+                $('.q6wrap').hide();
+            }
+        });
+    }
+});
+success_mag_t.to('#success_msg', {
+    keyframes: [
+        {
+            duration: 0.5,
+            opacity: 1
+        },
+        {
+            duration: 2,
+            opacity: 1
+        },
+        {
+            duration: 1,
+            opacity: 0
+        }
+    ],
+    onStart:function(){
+        console.log(change_no);
+        $('.q' + (change_no) + 'wrap').hide(0, function() {
+
+        });
+    },
+    onComplete:function(){
+        $('.q' + (change_no+1) + 'wrap').show(800, function() {
+            game_level++;
+            change_no++;
+            answer_check = '';
+            t.restart();
+            if (game_level === 5) {
+                $('.q6wrap').hide();
+            }
+        });
+    }
+});
+
+
+function check_answer(ans){
+    // console.log(ans);
+    // console.log('inArray='+ ans_check_arr[0] );
+    let temp = ans_check_arr[game_level];
+    if(temp.indexOf(ans) >= 0 ||temp == ans){
+        //答對
+        success_mag_t.restart();
+    }else{
+        //答錯
+        wrong_mag_t.restart();
     }
 }

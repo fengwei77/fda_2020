@@ -10,8 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0503a7b-1859-4bca-8faa-bba7a6b6f228" name="Default Changelist" comment="動態都好了剩下 判斷答案跟位置時間的調整">
+    <list default="true" id="f0503a7b-1859-4bca-8faa-bba7a6b6f228" name="Default Changelist" comment="接物品時間已OK">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameB.html" beforeDir="false" afterPath="$PROJECT_DIR$/gameB.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/game2.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/game2.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +60,9 @@
       <option name="presentableId" value="Default" />
       <updated>1596210766221</updated>
       <workItem from="1596210767434" duration="3740000" />
-      <workItem from="1596352080487" duration="15421000" />
+      <workItem from="1596352080487" duration="16074000" />
+      <workItem from="1596378804045" duration="2353000" />
+      <workItem from="1596384032663" duration="1635000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1596293153607</created>
@@ -89,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596367187422</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="接物品時間已OK">
+      <created>1596368213230</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1596368213230</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,13 +122,14 @@
     <MESSAGE value="init" />
     <MESSAGE value="hittest OK" />
     <MESSAGE value="動態都好了剩下 判斷答案跟位置時間的調整" />
-    <option name="LAST_COMMIT_MESSAGE" value="動態都好了剩下 判斷答案跟位置時間的調整" />
+    <MESSAGE value="接物品時間已OK" />
+    <option name="LAST_COMMIT_MESSAGE" value="接物品時間已OK" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1596367193358">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1596368217800">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596367193358" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596368217800" />
     <state x="531" y="236" key="run.anything.popup" timestamp="1596355970949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
