@@ -40,7 +40,10 @@ for (i = 0; i < 4; i++) {
         keyframes: [
             {
                 duration: 1,
-                y: 0,
+                opacity: 1
+            },
+            {
+                duration: 2,
                 opacity: 1
             },
             {
@@ -96,8 +99,9 @@ function throwComplete() {
 function checkHit(target) {
     // console.log(a);
     if (answer_check == '') {
-        if (Draggable.hitTest(target, "#player")) {
+        if (Draggable.hitTest(target, "#player", "50%")) {
             answer_check = target.slice(-1);
+            $(target).css('opacity',0);
             answer.push(target.slice(-1))
             console.log(answer);
         }
