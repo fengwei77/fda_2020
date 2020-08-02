@@ -7,7 +7,6 @@
 .track {
     width: 85%;
     height: 60px;
-    background: white;
     position: absolute;
     top: 500px;
     left: 5%;
@@ -23,14 +22,14 @@
     display:  block;
     position: relative;
     left:  8%;
-    top: 180px;
+    top: 220px;
 }
 .jar_box{
     max-width: 80px;
     display: inline-block;
     position: relative;
-    padding-left: 110px;
-    padding-right: 60px;
+    padding-left: 100px;
+    padding-right: 70px;
 }
 .jars{
 }
