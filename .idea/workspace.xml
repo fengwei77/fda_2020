@@ -12,6 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f0503a7b-1859-4bca-8faa-bba7a6b6f228" name="Default Changelist" comment="init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/game2.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/game2.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameB.html" beforeDir="false" afterPath="$PROJECT_DIR$/gameB.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/game2.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/game2.js" afterDir="false" />
     </list>
@@ -60,6 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596210766221</updated>
       <workItem from="1596210767434" duration="3740000" />
+      <workItem from="1596352080487" duration="8249000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1596293153607</created>
@@ -91,6 +93,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -102,9 +105,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1596293180248" />
-    <state x="425" y="189" key="run.anything.popup" timestamp="1596212535743">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="531" y="236" key="run.anything.popup" timestamp="1596355970949">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1596212535743" />
+    <state x="531" y="236" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1596355970949" />
   </component>
 </project>

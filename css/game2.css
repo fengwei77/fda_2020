@@ -18,3 +18,19 @@
     top: 0px;
     z-index: 20;
 }
+.drop_bar{
+    width: auto;
+    display:  block;
+    position: relative;
+    left:  8%;
+    top: 180px;
+}
+.jar_box{
+    max-width: 80px;
+    display: inline-block;
+    position: relative;
+    padding-left: 110px;
+    padding-right: 60px;
+}
+.jars{
+}
