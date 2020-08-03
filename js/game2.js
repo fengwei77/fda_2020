@@ -14,7 +14,7 @@ let game_level = 0;
 let change_no = 1;
 let answer_check = '';
 let answer = [];
-
+let correct_count = 0;
 t.pause();
 // var interval = setInterval(function () {
 //     game_level++;
@@ -39,12 +39,13 @@ for (i = 0; i < 4; i++) {
         onStart:next_scene,
         keyframes: [
             {
-                duration: 1,
-                opacity: 1
+                duration: 3,
+                opacity: 1,
+                onComplete: show_jar_box
             },
             {
-                duration: 2,
-                opacity: 1
+                duration: 1,
+                onStart: show_jar_box
             },
             {
                 onUpdate: checkHit,
@@ -55,13 +56,12 @@ for (i = 0; i < 4; i++) {
                 ease: CustomEase.create("custom", "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.392,0.963 0.4,1 0.408,0.985 0.431,0.968 0.472,0.906 0.527,0.821 0.599,0.871 0.612,0.88 0.688,0.93 0.719,0.981 0.726,0.998 0.788,0.914 0.84,0.936 0.859,0.95 0.878,0.964 0.897,0.985 0.911,0.998 0.922,0.994 0.939,0.984 0.954,0.984 0.969,0.984 1,1 1,1 ")
             },
             {
-                duration: .05,
+                duration: 1,
                 opacity: 0
             },
             {
                 duration: 0,
                 y: 0,
-                opacity: 0
             },
             {
                 duration: 2
@@ -155,17 +155,18 @@ wrong_mag_t.to('#wrong_msg', {
     ],
     onStart:function(){
         console.log(change_no);
-        $('.q' + (change_no) + 'wrap').hide(800, function() {
+        $('.q' + (change_no) + 'wrap').hide(0, function() {
 
         });
     },
     onComplete:function(){
-        $('.q' + (change_no+1) + 'wrap').show(800, function() {
+        $('.jar_box').hide();
+        $('.q' + (change_no+1) + 'wrap').show(0, function() {
             game_level++;
             change_no++;
             answer_check = '';
             t.restart();
-            if (game_level === 5) {
+            if (game_level === 6) {
                 $('.q6wrap').hide();
             }
         });
@@ -193,26 +194,33 @@ success_mag_t.to('#success_msg', {
         });
     },
     onComplete:function(){
-        $('.q' + (change_no+1) + 'wrap').show(800, function() {
+        $('.jar_box').hide();
+        $('.q' + (change_no+1) + 'wrap').show(0, function() {
             game_level++;
             change_no++;
             answer_check = '';
             t.restart();
-            if (game_level === 5) {
+            if (game_level === 6) {
                 $('.q6wrap').hide();
             }
         });
     }
 });
 
-
+function show_jar_box(){
+    $('.jar_box').fadeIn();
+}
 function check_answer(ans){
     // console.log(ans);
     // console.log('inArray='+ ans_check_arr[0] );
     let temp = ans_check_arr[game_level];
-    if(temp.indexOf(ans) >= 0 ||temp == ans){
+
+    // console.log(temp.indexOf(parseInt(ans)));
+    if(temp.indexOf(parseInt(ans)) != -1 ){
         //答對
         success_mag_t.restart();
+        correct_count++;
+        console.log(correct_count);
     }else{
         //答錯
         wrong_mag_t.restart();

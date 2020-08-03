@@ -11,6 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0503a7b-1859-4bca-8faa-bba7a6b6f228" name="Default Changelist" comment="接物品時間已OK">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameB.html" beforeDir="false" afterPath="$PROJECT_DIR$/gameB.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/game2.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/game2.js" afterDir="false" />
@@ -63,6 +64,7 @@
       <workItem from="1596352080487" duration="16074000" />
       <workItem from="1596378804045" duration="2353000" />
       <workItem from="1596384032663" duration="1635000" />
+      <workItem from="1596417683091" duration="5382000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1596293153607</created>
