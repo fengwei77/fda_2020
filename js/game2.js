@@ -18,7 +18,7 @@ let answer = [];
 let correct_count = 0;
 let wrong_count = 6;
 t.pause();
-// var interval = setInterval(function () {
+// var interval = setInterval(function () {re
 //     game_level++;
 //     change_no++;
 //     answer_check = '';
@@ -43,8 +43,7 @@ for (i = 0; i < 4; i++) {
             {
                 // duration: 3
                 duration: 3,
-                opacity: 1,
-                onComplete: show_jar_box
+                opacity: 1
             },
             {
                 duration: 1,
@@ -53,21 +52,24 @@ for (i = 0; i < 4; i++) {
             {
                 onUpdate: checkHit,
                 onUpdateParams: [jars[i]],
-                duration: 1 + gsap.utils.random([0, 0.3, 0.5, 0.8]),
+                duration: 1 + gsap.utils.random([0, 0.1, 0.2, 0.3]),
                 rotate: gsap.utils.random([-60, 60]),
-                y: 400,
+                y: 430,
                 ease: CustomEase.create("custom", "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.392,0.963 0.4,1 0.408,0.985 0.431,0.968 0.472,0.906 0.527,0.821 0.599,0.871 0.612,0.88 0.688,0.93 0.719,0.981 0.726,0.998 0.788,0.914 0.84,0.936 0.859,0.95 0.878,0.964 0.897,0.985 0.911,0.998 0.922,0.994 0.939,0.984 0.954,0.984 0.969,0.984 1,1 1,1 ")
             },
             {
-                duration: 1,
-                opacity: 0
+                duration: 2,
+                opacity: 0,
+                onComplete: miss_catch
             },
             {
+                onStart:hide_jar_box,
                 duration: 0,
                 y: 0,
             },
             {
-                duration: 2
+                //
+                duration: 1
             }
         ]
     }, 0)
@@ -98,14 +100,18 @@ function throwComplete() {
 }
 
 //物體碰撞
+let temp_target = '';
 
 function checkHit(target) {
-    // console.log(a);
+    // console.log(answer_check);
     // console.log(target);
     if (answer_check == '') {
         if (Draggable.hitTest(target, "#player", "50%")) {
             answer_check = target.slice(-1);
-            $(target).css('opacity', 0);
+            temp_target = target;
+            $(temp_target).css({
+                'opacity': 0,
+            });
             answer.push(target.slice(-1))
             check_answer(target.slice(-1));
             // console.log(answer);
@@ -117,6 +123,16 @@ function checkHit(target) {
     // }
 }
 
+let miss_catch_check = true;
+
+function miss_catch() {
+    if (miss_catch_check && answer_check == '') {
+        miss_catch_check = false;
+        console.log(miss_catch);
+        wrong_mag_t.restart();
+
+    }
+}
 
 function change_jars_image(no) {
     for (let i = 0; i < 4; i++) {
@@ -145,12 +161,11 @@ success_mag_t.pause();
 wrong_mag_t.to('#wrong_msg', {
     keyframes: [
         {
-            duration: 0.5,
+            duration: 1,
             opacity: 1
         },
         {
             duration: 2,
-            opacity: 1
         },
         {
             duration: 1,
@@ -158,52 +173,19 @@ wrong_mag_t.to('#wrong_msg', {
         }
     ],
     onStart: function () {
-        console.log(change_no);
-        if (change_no === 6) {
-            $('.q6wrap').hide();
-
-            setTimeout(function () {
-                if (correct_count == 6) {
-                    Swal.fire({
-                        title: "恭喜你過關了,請去填寫資料!",
-                        showCancelButton: false,
-                        confirmButtonColor: '#3085d6',
-                        confirmButtonText: '好的'
-                    }).then((result) => {
-                        if (result.value) {
-                            location.href = 'register.html'
-                        }
-                    })
-                } else {
-                    wrong_count -= correct_count;
-                    Swal.fire({
-                        title: "你錯了" + wrong_count + "題,請再玩一次!",
-                        showCancelButton: false,
-                        confirmButtonColor: '#3085d6',
-                        confirmButtonText: '我知道了'
-                    }).then((result) => {
-                        if (result.value) {
-                            location.href = 'index.html'
-                        }
-                    })
-                }
-            })
-        }
-        $('.q' + (change_no) + 'wrap').hide(0, function () {
-
-        });
+        // $(temp_target).css({
+        //     'opacity': 0,
+        // });
+        // console.log(change_no);
+        // $('.q' + (change_no) + 'wrap').hide(0, function () {
+        //
+        // });
     },
     onComplete: function () {
-        $('.jar_box').hide();
-        $('.q' + (change_no + 1) + 'wrap').show(0, function () {
-            game_level++;
-            change_no++;
-            answer_check = '';
-            t.restart();
-            if (game_level === 6) {
-                $('.q6wrap').hide();
-            }
-        });
+        answer_check = '';
+        // $('.jar_box').hide();
+        miss_catch_check = true;
+        t.restart();
 
     }
 });
@@ -223,7 +205,7 @@ success_mag_t.to('#success_msg', {
         }
     ],
     onStart: function () {
-        console.log(change_no);
+        // console.log(change_no);
         if (change_no === 6) {
             $('.q6wrap').hide();
             setTimeout(function () {
@@ -273,7 +255,11 @@ success_mag_t.to('#success_msg', {
 });
 
 function show_jar_box() {
-    $('.jar_box').fadeIn();
+    $('.jar_box').css('opacity',1);
+}
+
+function hide_jar_box() {
+    $('.jar_box').css('opacity',0);
 }
 
 function check_answer(ans) {
@@ -286,7 +272,7 @@ function check_answer(ans) {
         //答對
         success_mag_t.restart();
         correct_count++;
-        console.log(correct_count);
+        // console.log(correct_count);
     } else {
         //答錯
         wrong_mag_t.restart();

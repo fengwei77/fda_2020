@@ -3,12 +3,13 @@ body{
 }
 #jpreOverlay {
 	background:url(../images/loadingbg.jpg);
+	background-size: contain;
 }
 #jpreSlide{
 }
 
 #jpreLoader{
-	background:url(../images/loading.gif) center top no-repeat;
+	/*background:url(../images/loading.gif) center top no-repeat;*/
 	width:100px;
 	height:10px;
 /*	transform:rotate(157deg);

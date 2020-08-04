@@ -2,7 +2,17 @@
     overflow: hidden;
 }
 #wrap {
-    height: auto;
+    /*height: auto;*/
+    max-height: 100vh;
+    overflow: auto;
+}
+
+@media screen and (min-width: 480px) {
+    #wrap {
+        /*height: auto;*/
+        max-height: 920px;
+        overflow: hidden;
+    }
 }
 .track {
     width: 85%;
