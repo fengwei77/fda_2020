@@ -1,0 +1,33 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
+// Bootstrap
+@import "~bootstrap/dist/css/bootstrap.min.css";
+//admin-lte
+@import "~admin-lte/dist/css/adminlte.min.css";
+//icheck-bootstrap
+@import "~icheck-bootstrap/icheck-bootstrap.min.css";
+//Ionicons
+@import "~ionicons/dist/scss/ionicons";
+@import "~ionicons/dist/scss/ionicons-common";
+@import "~ionicons/dist/scss/ionicons-core";
+@import "~ionicons/dist/scss/ionicons-icons";
+@import "~ionicons/dist/scss/ionicons-variables";
+//fortawesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.sub_li {
+    background: #e5e5e5;
+    border-radius: 4px;
+}
+
+[class*=sidebar-light-] .nav-treeview>.nav-item>.nav-link {
+    color: #505050;
+}

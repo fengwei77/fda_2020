@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="粧知識打卡趣-網路有獎徵答活動" >
+    <meta property="og:url" content="https://tfdacos.com.tw">
+    <meta property="og:image" content="https://tfdacos.com.tw/images/share.jpg">
+    <link href="css/reset.css" rel="stylesheet" media="screen"/>
+    <link rel="stylesheet" href="css/jpreloader.css">
+    <link href="css/style.css" rel="stylesheet" media="screen"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/jpreloader.min.js"></script>
+    <script type="text/javascript" src="js/eventact.js"></script>
+
+    <title>粧知識打卡趣-網路有獎徵答活動</title>
+</head>
+<body>
+<img src="https://www.tfdacos.com.tw/images/share.jpg" style="display: none;">
+<!--得獎名單popup start-->
+<div id="awardpopwrap">
+    <div class="bbg"></div>
+    <div class="popup radius50">
+        <img src="images/awardpop.png" alt="" class="pop"/>
+        <div class="fbfans">
+            <a href="https://www.facebook.com/tfdacos/" target="_blank"><img src="images/fansphoto.jpg" alt="" /></a>
+            <div class="fbright">
+                <a href="https://www.facebook.com/tfdacos/" target="_blank" class="fbname">TFDA化粧品安全使用</a>
+                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Ftfdacos%2F&width=92&layout=button_count&action=like&size=large&show_faces=false&share=false&height=21&appId=371676216271457" width="92" height="30" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            </div>
+        </div>
+
+        <a href="javascript: void(0)"  class="close" onclick="awardpopout()"></a>
+    </div>
+</div>
+<!--得獎名單popup end-->
+<!--加入粉絲團popup start-->
+<div id="addfanswrap">
+    <div class="bbg"></div>
+    <div class="popup radius50">
+        <img src="images/addfanspop.png" alt="" class="pop"/>
+        <div class="fbfans">
+            <a href="https://www.facebook.com/tfdacos/" target="_blank"><img src="images/fansphoto.jpg" alt="" /></a>
+            <div class="fbright">
+                <a href="https://www.facebook.com/tfdacos/" target="_blank" class="fbname">TFDA化粧品安全使用</a>
+                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Ftfdacos%2F&width=92&layout=button_count&action=like&size=large&show_faces=false&share=false&height=21&appId=371676216271457" width="92" height="30" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            </div>
+            <a href="#" class="alreadylike">我已按過讚</a>
+        </div>
+    </div>
+</div>
+<!--加入粉絲團popup end-->
+<div id="wrap" class="indexbg">
+    <div class="container">
+        <a href="https://www.fda.gov.tw/TC/index.aspx"><img src="images/logo.png" alt="" /></a>
+        <div class="nav">
+            <ul>
+                <li><a href="javascript: void(0)" class="m1 act"></a></li>
+                <li><a href="rule.html" class="m2"></a></li>
+                <li><a href="javascript: void(0)" class="m3" onclick="awardpop()"></a></li>
+                <li><a href="https://www.facebook.com/tfdacos/" target="_blank" class="m4"></a></li>
+            </ul>
+        </div>
+        <img src="images/title.png" alt="" class="title" />
+        <img src="images/handsomeboy.png" alt="" class="handsomeboy" />
+        <img src="images/handsomeboy_msg.png" alt="" class="handsomeboy_msg" />
+        <img src="images/patty.png" alt="" class="patty" />
+        <img src="images/patty_msg.png" alt="" class="patty_msg" />
+        <img src="images/cat.png" alt="" class="cat" />
+        <img src="images/cat_msg.png" alt="" class="cat_msg" />
+        <img src="images/ken.png" alt="" class="ken" />
+        <img src="images/ken_msg.png" alt="" class="ken_msg" />
+        <img src="images/niu.png" alt="" class="niuniu" />
+        <img src="images/niu_msg.png" alt="" class="niuniu_msg" />
+        <img src="images/niu_msg2.png" alt="" class="niuniu_msg2" />
+        <a href="javascript:void(0)" class="playbtn1"><img src="images/gameAbtn.png" alt=""/></a>
+        <div class="playbtn2"><img src="images/gameBbtn-bw.png" alt=""/></div>
+        <div class="playbtn3"><img src="images/gameCbtn-bw.png" alt=""/></div>
+    </div>
+</div>
+
+<script>
+    debug = true;
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '989259007900174',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v8.0'
+        });
+
+
+        // FB.getLoginStatus(function(response) {
+        //     statusChangeCallback(response);
+        // });
+
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/zh_TW/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // Here we run a very simple test of the Graph API after login is
+    // successful.  See statusChangeCallback() for when this call is made.
+    function testAPI() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+            console.log('Successful login for: ' + response.name);
+            document.getElementById('status').innerHTML =
+                'Thanks for logging in, ' + response.name + '!';
+        });
+    }
+
+
+    function statusChangeCallback(response) {
+        // console.log('statusChangeCallback');
+        // console.log(response);
+        if (response.status == 'connected') {
+            addfanspop();
+        } else {
+            fb_login();
+        }
+    }
+
+    function checkLoginState() {
+        // addfanspop();
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    }
+
+
+
+    function fb_login(){
+        FB.login(function(response) {
+            if (response.status === 'connected') {
+                // Logged into your app and Facebook.
+                addfanspop();
+            } else {
+                // The person is not logged into this app or we are unable to tell.
+            }
+        });
+    }
+
+    function feed(){
+
+        FB.ui({
+            app_id : '140542680109944',
+            method: 'feed',
+            link: 'http://www.pulsation.com.tw',
+            description: 'description' ,
+            title: 'title'
+        }, function (response) {
+            //console.log('run:' );
+            // console.log( response.error_code);
+            console.log(response.error_code);
+            if (response.error_code != '') {
+                console.log('re feed');
+            } else {
+
+
+            }
+
+        });
+
+    }
+    var now_go = 1;
+    function closefanspop() {
+        $('#addfanswrap').css('display','none');
+        TweenMax.to($('#addfanswrap .bbg'), 0, {autoAlpha:1,ease:Quad.easeOut});
+        TweenMax.to($('#addfanswrap .popup'), 0.6, {autoAlpha:1,marginTop:250,ease:Elastic.easeOut});
+        if(now_go == 2){
+            location.href = 'gameB.html';
+        }else if(now_go == 3){
+            location.href = 'gameC.html';
+
+        }else{
+            location.href = 'gameA.html';
+
+        }
+    }
+
+    //判斷其別
+    var s1 = ['2019/08/12 00:01:00' ,'2019/09/02 23:59:59' ];
+    var s2 = ['2019/09/16 00:00:00' ,'2019/10/11 23:59:59' ];
+    var s3 = ['2019/10/28 00:00:00' ,'2019/11/24 23:59:59' ];
+
+    var now_date = Date.now();
+    console.log(now_date);
+    console.log( Date.parse(s1[1]) );
+    $('.playbtn1').css('cursor' , 'pointer');
+
+    $('.playbtn1').click(function(){
+        if(compare_date(now_date , s1[0] ,s1[1]) || debug){
+            $('.alreadylike').attr('href','gameA.html');
+            checkLoginState();
+            setCookie("ga1", "1", 1);
+            now_go = 1;
+        }else{
+            alert('此時段活動尚未開始！');
+            $('#addfanswrap').css('display','none');
+            return false;
+        }
+    });
+    // $('.playbtn1 img').attr('src' , 'images/playbtn1-disable.png');
+
+    if(compare_date(now_date , s2[0] ,s2[1]) || debug){
+        $('.playbtn2 img').attr('src' , 'images/gameBbtn.png');
+        $('.playbtn2').css('cursor' , 'pointer');
+    }
+    $('.playbtn2').click(function(){
+        if(compare_date(now_date , s2[0] ,s2[1]) || debug){
+            $('.alreadylike').attr('href','gameB.html');
+            checkLoginState();
+            setCookie("gb1", "1", 1);
+            now_go = 2;
+
+        }else{
+            alert('此時段活動尚未開始！');
+            $('#addfanswrap').css('display','none');
+            return false;
+        }
+    });
+    if(compare_date(now_date , s2[0] ,s2[1]) || debug){
+        $('.playbtn3').css('cursor' , 'pointer');
+
+        $('.playbtn3 img').attr('src' , 'images/gameCbtn.png');
+    }
+    $('.playbtn3').click(function(){
+        if(compare_date(now_date , s3[0] ,s3[1])|| debug){
+            $('.alreadylike').attr('href','gameC.html');
+            // $('.playbtn3 img').attr('src' , 'images/playbtn3.png');
+            $('.playbtn3').css('cursor' , 'pointer');
+            checkLoginState();
+            setCookie("gc1", "1", 1);
+            now_go = 3;
+
+        }else{
+            alert('此時段活動尚未開始！');
+            $('#addfanswrap').css('display','none');
+            return false;
+        }
+    });
+    //判斷分享
+
+
+</script>
+
+<div style="display: none;">
+
+    <div id="status">
+    </div>
+    <button id="login_fb" onclick="fb_login();">fb</button>
+    <button id="feed" onclick="feed();">FEED</button>
+
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145414792-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145414792-1');
+</script>
+</body>
+</html>

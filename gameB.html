@@ -16,8 +16,25 @@
     <script type="text/javascript" src="node_modules/gsap/dist/Draggable.min.js"></script>
     <script type="text/javascript" src="node_modules/gsap/minified/CustomEase.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.all.min.js"></script>
+    <!-- 若需相容 IE11，要加載 Promise Polyfill-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.10.4/polyfill.min.js"></script>
     <title>粧愛水星球-化粧品安全選用 網路有獎徵答活動</title>
 </head>
+<style>
+    .swal2-title {
+        position: relative;
+        max-width: 100%;
+        margin: 0 0 .4em;
+        padding: 0;
+        color: #595959;
+        font-size: 1.475em;
+        font-weight: 600;
+        line-height: 1.2em;
+        text-align: center;
+        text-transform: none;
+        word-wrap: break-word;
+    }
+</style>
 <body>
 
 <div id="wrap" class="gameBbg">

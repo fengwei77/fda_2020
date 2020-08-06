@@ -31,6 +31,8 @@ t.pause();
 setTimeout(function () {
     t.play();
 }, 500);
+
+
 // setTimeout(function () {
 //     game_level++;
 //     change_no++;
@@ -46,30 +48,30 @@ for (i = 0; i < 4; i++) {
                 opacity: 1
             },
             {
-                duration: 1,
+                duration: 2,
                 onStart: show_jar_box
             },
             {
                 onUpdate: checkHit,
                 onUpdateParams: [jars[i]],
-                duration: 1 + gsap.utils.random([0, 0.1, 0.2, 0.3]),
-                rotate: gsap.utils.random([-60, 60]),
+                duration: 5.2 + parseFloat(gsap.utils.random(['0', '0.1', '0.2', '0.3'])),
+                rotate:  parseInt(gsap.utils.random(['360', '-360', '-540', '540', '270', '-270'])),
                 y: 430,
                 ease: CustomEase.create("custom", "M0,0 C0.14,0 0.242,0.438 0.272,0.561 0.313,0.728 0.392,0.963 0.4,1 0.408,0.985 0.431,0.968 0.472,0.906 0.527,0.821 0.599,0.871 0.612,0.88 0.688,0.93 0.719,0.981 0.726,0.998 0.788,0.914 0.84,0.936 0.859,0.95 0.878,0.964 0.897,0.985 0.911,0.998 0.922,0.994 0.939,0.984 0.954,0.984 0.969,0.984 1,1 1,1 ")
             },
             {
-                duration: 2,
+                onStart:hide_jar_box,
+                duration: 1,
                 opacity: 0,
                 onComplete: miss_catch
             },
             {
-                onStart:hide_jar_box,
                 duration: 0,
                 y: 0,
             },
             {
                 //
-                duration: 1
+                duration: 2
             }
         ]
     }, 0)
@@ -90,9 +92,9 @@ let dragMe = Draggable.create("#player", {
 
 
 function getThePosition() {
-    if (this.hitTest(jars[2])) {
-        // console.log(jars_1[2]);
-    }
+    // if (this.hitTest(jars[2])) {
+    //     // console.log(jars_1[2]);
+    // }
 }
 
 function throwComplete() {
@@ -103,8 +105,8 @@ function throwComplete() {
 let temp_target = '';
 
 function checkHit(target) {
+    temp_target = '';
     // console.log(answer_check);
-    // console.log(target);
     if (answer_check == '') {
         if (Draggable.hitTest(target, "#player", "50%")) {
             answer_check = target.slice(-1);
@@ -112,6 +114,8 @@ function checkHit(target) {
             $(temp_target).css({
                 'opacity': 0,
             });
+
+            console.log(target);
             answer.push(target.slice(-1))
             check_answer(target.slice(-1));
             // console.log(answer);
@@ -161,11 +165,11 @@ success_mag_t.pause();
 wrong_mag_t.to('#wrong_msg', {
     keyframes: [
         {
-            duration: 1,
+            duration: 0.3,
             opacity: 1
         },
         {
-            duration: 2,
+            duration: 2.7,
         },
         {
             duration: 1,
@@ -192,12 +196,11 @@ wrong_mag_t.to('#wrong_msg', {
 success_mag_t.to('#success_msg', {
     keyframes: [
         {
-            duration: 0.5,
+            duration: 0.3,
             opacity: 1
         },
         {
-            duration: 2,
-            opacity: 1
+            duration: 2.7,
         },
         {
             duration: 1,
@@ -211,11 +214,11 @@ success_mag_t.to('#success_msg', {
             setTimeout(function () {
                 if (correct_count == 6) {
                     Swal.fire({
-                        title: "恭喜你過關了,請去填寫資料!",
+                        title: "恭喜你過關了,請填寫抽獎資料!",
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
-                        confirmButtonText: '我知道了'
-                    }).then((result) => {
+                        confirmButtonText: 'OK'
+                    }).then( function (result) {
                         if (result.value) {
                             location.href = 'register.html'
                         }
@@ -227,7 +230,7 @@ success_mag_t.to('#success_msg', {
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: '我知道了'
-                    }).then((result) => {
+                    }).then( function (result) {
                         if (result.value) {
                             location.href = 'index.html'
                         }
@@ -240,7 +243,7 @@ success_mag_t.to('#success_msg', {
         });
     },
     onComplete: function () {
-        $('.jar_box').hide();
+        // $('.jar_box').hide();
         $('.q' + (change_no + 1) + 'wrap').show(0, function () {
             game_level++;
             change_no++;
@@ -256,10 +259,15 @@ success_mag_t.to('#success_msg', {
 
 function show_jar_box() {
     $('.jar_box').css('opacity',1);
+    $('.jar_box').show();
 }
-
+const jar_box_t = gsap.timeline();
 function hide_jar_box() {
-    $('.jar_box').css('opacity',0);
+    // $('.jar_box').css('opacity',0);
+    jar_box_t.to('.jar_box', {
+        duration: 0.1,
+        opacity: 0}
+        );
 }
 
 function check_answer(ans) {

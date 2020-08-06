@@ -1,0 +1,32 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
+// Bootstrap
+@import "~bootstrap/dist/css/bootstrap.min.css";
+// bootstrap-table
+@import "~bootstrap-table/dist/bootstrap-table.min.css";
+//admin-lte
+@import "~admin-lte/dist/css/adminlte.min.css";
+//bootstrap4-toggle
+@import "~bootstrap4-toggle/css/bootstrap4-toggle.min.css";
+//toastr
+@import "~toastr/build/toastr.min.css";
+//fancybox
+@import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+//Ionicons
+@import "~ionicons/dist/css/ionicons.min.css";
+//fortawesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+//fortawesome-animation
+@import '~font-awesome-animation/dist/font-awesome-animation.min.css';
+body{
+    font-family: "Noto Sans TC", sans-serif;
+}
+.login-box{
+    top: 25%;
+    position: absolute;
+}
+

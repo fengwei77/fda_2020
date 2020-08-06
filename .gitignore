@@ -1,0 +1,12 @@
+.env
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.idea/composerJson.xml
+.idea/workspace.xml.xml
+.idea/
+run/storage/
+run/vendor/
+run/node_modules/
